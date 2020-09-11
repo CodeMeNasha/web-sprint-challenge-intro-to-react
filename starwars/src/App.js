@@ -15,11 +15,11 @@ const App = () => {
   useEffect(() => {
     axios
       .get("https://swapi.py4e.com/api/people/")
-      .then((res) => {
+      .then(res => {
         console.log(res);
         setCharacters(res.data.results);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log("Error Alert", err);
       });
   }, []);
