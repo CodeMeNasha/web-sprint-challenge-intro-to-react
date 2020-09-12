@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import './App.css';
 import Character from "./components/Character";
+import styled from "styled-components";
+
 
 function App() {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -11,7 +12,13 @@ function App() {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   //setting inital state here to empty array
-
+  const StyledDiv = styled.div`
+  background-color: purple;
+  
+  h1 {
+    text-align: center;
+  }
+  `
 
   const [charactersData, setCharactersData] = useState([]);
 
@@ -29,11 +36,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <StyledDiv className="App">
       <h1 className="Header">Characters</h1>
       <Character key={charactersData.key} charactersData={charactersData} />
-    </div>
+    </StyledDiv>
   );
 }
 
 export default App;
+
